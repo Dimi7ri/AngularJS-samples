@@ -33,6 +33,14 @@
 			this.review = {};	
 		};
   	});
+	/* Dash in HTML translates to camelCase in JS */
+  	app.directive('productTitle', function(){
+  		return {
+  			restrict: 'E',
+  			templateUrl: 'product-title.html'
+
+  		};
+  	});
 
 	var gems = [
 	  {
