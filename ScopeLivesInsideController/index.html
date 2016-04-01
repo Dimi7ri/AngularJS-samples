@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app = "ScopeLife">
+   <head>
+      <title>Angular JS Scope Life Cycle</title>
+   </head>
+   <body>
+      <h1>$scope lives inside of each controller</h1>
+      
+      	<div ng-controller = "firstController">
+            <p>Name: {{name}} </p>
+            <p>Code: {{code}} </p>
+        	<div ng-controller = "secondController">
+            	<p>Name: {{name}} </p> 
+            	<p>Code: {{code}} </p>
+        	</div>
+        	<div ng-controller = "thirdController">
+           		<p>Name: {{name}} </p>
+            	<p>Code: {{code}} </p>
+        	</div>
+        </div>
+        
+      <script src = "angular.min.js"></script>
+      <script>
+         var app = angular.module("ScopeLife", []);
+         
+         app.controller("firstController", function($scope) {
+            $scope.name = "1ST Controller";
+            $scope.code = "1";
+         });
+         
+         app.controller("secondController", function($scope) {
+            $scope.name = "2ND Controller";
+            $scope.code = "2";
+         });
+         
+         app.controller("thirdController", function($scope) {
+            $scope.name = "3RD Controller";
+            $scope.code = "3";
+         });
+			
+      </script>
+      
+   </body>
+</html>
